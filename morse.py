@@ -23,7 +23,7 @@ for letra in LUISA:
         else:
             GPIO.output(out_pin, GPIO.HIGH)
             time.sleep(3)
-            GPIO.output(dig_out_pin, GPIO.LOW)
+            GPIO.output(out_pin, GPIO.LOW)
             time.sleep(1)
 
     time.sleep(3)
