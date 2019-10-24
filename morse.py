@@ -1,7 +1,7 @@
 import Adafruit_BBIO.GPIO as GPIO
 import time
 
-dig_out_pin = "P9_12" #pin reference
+out_pin = "P9_12" #pin reference
 GPIO.setup(out_pin, GPIO.OUT)
 
 l = [0,1,0,0]
