@@ -1,11 +1,8 @@
 import Adafruit_BBIO.GPIO as GPIO
 import time
 
-GPIO.setup('USR0', GPIO.OUT)
-GPIO.setup('USR1', GPIO.OUT)
-GPIO.setup('USR2', GPIO.OUT)
-GPIO.setup('USR3', GPIO.OUT)
-
+dig_out_pin = "P9_12" #pin reference
+GPIO.setup(out_pin, GPIO.OUT)
 
 l = [0,1,0,0]
 u = [0,0,1]
@@ -18,10 +15,15 @@ LUISA = [l, u, i, s, a]
 for letra in LUISA:
     for ii in range(len(letra)):
 
-while True:
-    time.sleep(0.5)
-    if light == 0:
-        GPIO.setup('USR0', GPIO.HIGH)
-        GPIO.setup('USR1', GPIO.HIGH)
-        GPIO.setup('USR2', GPIO.HIGH)
-        GPIO.setup('USR3', GPIO.HIGH)
+        if letra[ii] = 0:
+            GPIO.output(out_pin, GPIO.HIGH)
+            time.sleep(1)
+            GPIO.output(dig_out_pin, GPIO.LOW)
+            time.sleep(1)
+        else:
+            GPIO.output(out_pin, GPIO.HIGH)
+            time.sleep(3)
+            GPIO.output(dig_out_pin, GPIO.LOW)
+            time.sleep(1)
+
+    time.sleep(3)
