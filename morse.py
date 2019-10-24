@@ -27,3 +27,5 @@ for letra in LUISA:
             time.sleep(1)
 
     time.sleep(3)
+
+GPIO.cleanup()
