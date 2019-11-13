@@ -14,25 +14,22 @@ talanquera_input = "P9_21"
 GPIO.setup(talanquera_power, GPIO.OUT)
 GPIO.setuo(talanquera_input, GPIO.IN)
 
-detections = {}
-
 GPIO.output(recep_power, GPIO.HIGH)
 GPIO.output(talanquera_power, GPIO.HIGH)
 
-try:    
-    while(True):   
-        ii = 0
-        now = []
-        detections[ii] = []
+detections = []
+
+try:
+    while(True):
+        now = time.strftime("%d/%m/%Y %H:%M:%S")
         if GPIO.input(talanquera_input):
-            now.append(time.strftime("%d/%m/%Y %H:%M:%S"))
             if GPIO.input(recep_input): 
-                detections[ii].append((np.nan,0))
+                detections.append((now,0))
             else:
-                detections[ii].append(now,1)
+                detections.append((now,1))
             time.sleep(0.02)
         else:
-            ii+=1
+            detections.append((np.nan,0))
 
 except KeyboardInterrupt:
     GPIO.output(recep_power, GPIO.LOW)
