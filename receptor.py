@@ -29,7 +29,7 @@ try:
                 detections.append((now,1))
             time.sleep(0.02)
         else:
-            detections.append((np.nan,0))
+            detections.append((False,0))
 
 except KeyboardInterrupt:
     GPIO.output(recep_power, GPIO.LOW)
