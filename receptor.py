@@ -24,12 +24,12 @@ try:
         now = time.strftime("%d/%m/%Y %H:%M:%S")
         if GPIO.input(talanquera_input):
             if GPIO.input(recep_input): 
-                detections.append((now,0))
+                detections.append([now,0])
             else:
-                detections.append((now,1))
+                detections.append([now,1])
             time.sleep(0.02)
         else:
-            detections.append((False,0))
+            detections.append([False,0])
 
 except KeyboardInterrupt:
     GPIO.output(recep_power, GPIO.LOW)
